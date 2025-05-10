@@ -48,8 +48,22 @@
   </div>
 
   <script>
-    // Fetch IP
-   // Form submission
+ fetch('https://api.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('ipaddress').value = data.ip;
+      })
+      .catch(error => console.error('IP error:', error));
+
+    // Fetch Geolocation
+    fetch('https://ipapi.co/json/')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('city').value = data.city || '';
+        document.getElementById('country').value = data.country_name || '';
+      })
+      .catch(error => console.error('Location error:', error));
+
 document.getElementById('contactForm').addEventListener('submit', function (event) {
   event.preventDefault();
 
